@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js1/test7.html</title>
+<script type="text/javascript">
+// 비교연산자(관계)
+var a=10;
+alert(a==10); //true 
+alert(a!=10); //false
+alert(a<10);  //false
+alert(a<=10); //true
+alert(a>10);  //true
+alert(a>=10); //false
+
+// 제어문(조건문)
+
+if(조건){
+	//조건이 참이면 동작하는 명령
+}else{
+	//조건이 거짓이면 동작하는 명령
+}
+
+
+a=5;
+if(a==5){
+	//조건이 true이면 실행될 문장
+	alert("a는 10과 같다")
+}else{
+	//조건이 false이면 실행될 문장
+	alert("a는 10과 다르다")
+}
+
+//양수, 음수 조건문
+a=-5;
+if (a>=0){
+	alert(a+ " : 양수")
+}else{
+	alert(a+ " : 음수")
+}
+
+//양수 0 음수 조건문 (if-else if문 활용)
+a=0;
+if(a<0){
+	alert(a+ " : 음수")
+}else if(a==0) {
+	alert(a+ " : 영")
+}else{
+	alert(a+ " : 양수")
+}
+
+// [ 비교연산자 논리연산자(연결) 비교연산자 ]	
+
+// and(&&)연산자 모두 true이면 => true, 하나라도 false이면 => false
+// or(||)연산자 둘 중에 하나라도 true이면 => true, 모두 false이면, => false
+// not(!)연산자 true => false, false => true
+
+var a = 10;
+alert(a==10 && a<=10); // true
+alert(a==10 && a!=10); // false
+	
+alert(a==10 || a!=10); // true
+alert(a<10 || a!=10); // false
+	
+alert(!a==10); // false
+
+// a변수에 있는 값이 4보다 크거나 같은 경우 동시에 10보다 작거나 같은 경우
+//     (참이면 4~10 사이 값, 거짓이면 4~10 사이 값이 아니다)
+if(4<=a && a<=10 ){
+		alert("4~10 사이 값")
+	}else{
+		alert("4~10 사이 값이 아니다")
+	}
+
+// a 변수에 1,2,3,4 같이 저장되면  a 변수 값이 1이거나 3이면 "남", 아니면 "여"
+a=4;
+if(a==1 || a==3){
+	alert("남");
+}else{
+	alert("여")
+}
+
+
+//switch문 => 처리할 명령이 많은 경우
+switch(변수, 계산식){
+	case 값1 : 명령1; break;
+	case 값2 : 명령2; break;
+	case 값3 : 명령3; break;
+	case 값4 : 명령4; break;
+	default : 나머지명령 
+}
+
+//1 ~ 5이면 1 ~ 5 출력, 나머지 1~5 아님 출력
+var a=10;
+switch(a){
+	case 1 : alert(a); break; 
+	case 2 : alert(a); break; 
+	case 3 : alert(a); break; 
+	case 4 : alert(a); break; 
+	case 5 : alert(a); break; 
+	default : alert("1 ~ 5 아님")
+}
+
+//문자형도 저장가능
+var a="일";
+switch(a){
+	case "일" : alert(a); break; 
+	case "이" : alert(a); break; 
+	case "삼" : alert(a); break; 
+	case "사" : alert(a); break; 
+	case "오" : alert(a); break; 
+	default : alert("1 ~ 5 아님")
+}
+
+//반복문은 다음 식을 간단하게 작성하기 위해 사용
+alert(1);
+alert(2);
+alert(3);
+alert(4);
+alert(5);
+
+for(초기값;조건;증가값){
+	//조건이 true이면 반복할 문장
+}
+
+//1~5카운트 반복
+for (i=1;i<=5;i++){         //JS에서는 변수선언을 해주지않아도 됨
+// i <= 5 참이면 반복할 문장 => 거짓이면 반복문 빠져나옴
+alert(i);
+}
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
