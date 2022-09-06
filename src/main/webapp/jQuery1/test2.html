@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test2.html</title>
+<script type="text/javascript" src="jquery-3.6.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+// 		alert("동작");
+// 		$(대상).함수('속성','값');
+// 		대상	전체대상 * , 태그대상 h1, id=표시(#표시), class=표시(.표시)
+		$('*').css('color','blue');
+		$('h1').css('color','red');
+		//p태그에 글자색 green 설정
+		$('p').css('color','green');
+		
+		// id="hh" 대상으로 배경색 설정
+		$('#hh').css('background-color','pink');
+		// id="pp" 대상으로 배경색 yellow 설정
+		$('#pp').css('background-color','yellow');
+		
+		// class="hhh" 대상으로 배경색 설정
+		$('.hhh').css('background-color','skyblue');
+		// class="ppp" 대상으로 배경색 orange 설정
+		$('.ppp').css('background-color','orange');
+		
+// 		태그[속성=값]	태그[조건]		
+		$('input[type=text]').css('color','black');
+		$('input[type=password]').css('color','olive');
+	});
+</script>
+</head>
+<body>
+<input type="text">
+<input type="password">
+<h1>제목1</h1>
+<h1 id="hh">제목2</h1>
+<h1 class="hhh">제목3</h1>
+<p>본문 내용1</p>
+<p id="pp">본문 내용2</p>
+<p class="ppp">본문 내용3</p>
+</body>
+</html>

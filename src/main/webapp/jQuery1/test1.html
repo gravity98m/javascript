@@ -7,10 +7,20 @@
 <script type="text/javascript">
 // jQuery => JavaScript Library => 자바스크립트 함수 모임
 	//대상.함수()
-	$(document).ready(function(){
+	$(document).ready(function(){ //가장 기본이자 많이 사용
 		// js
 		alert("동작");
 	});
+	jQuery(document).ready(function(){
+		// js
+		alert("동작2");
+	});
+	
+	$(function(){
+		alert("동작3");
+		
+	});
+	
 </script>
 </head>
 <body>
