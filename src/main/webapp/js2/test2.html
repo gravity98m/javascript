@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test2.html</title>
+<script type="text/javascript">
+// window	- location(주소입력창)
+// 			- history (방문기록)
+// 			- document (html전체틀) - image, div (텍스트상자, 하이퍼링크)
+// 								 - form - text, passward, textarea
+// 								 - checkbox, radio
+// 								 - select
+
+// location : 웹브라우저에서 주소를 입력하는 주소줄 내장객체 정의
+// 	window 생략 가능
+//	window.location.변수 	- 기능 담당		
+//    	=> location. href 변수 : 주소줄 내용 저장 "location.href='www.naver.com'"
+// 	window.location.함수()	- 특징 담당
+// 		=> location.reload() 함수 : 새로고침
+
+function fun1(){
+	// 주소줄에 내용 확인
+	alert(location.href);
+	
+	
+}
+
+function fun2(){ // a태그 하이퍼링크 개념과 같음.
+	// 주소줄 내용 변경
+	location.href="http://www.naver.com";
+	
+}
+
+function fun3(){
+	// js2폴더 test1.html 이동 => 주소줄 내용을 test1.html로 변경
+	location.href="test1.html";
+}
+
+function fun4() {
+	// js1폴더 test13.html 이동  => cmd에서 상위폴더로 이동하는 명령어 .. 사용
+	location.href= "../js1/test13.html";
+	
+}
+
+function fun5(){ // '서버'에 가서 변경된 내용을 다시 불러옴.
+	// 주소줄의 내용을 새롭게 가져온다
+	location.reload();
+	
+}
+
+</script>
+</head>
+<body>
+
+<a href="http://www.naver.com">하이퍼링크</a>
+<input type="button" value="주소줄 내용" onclick="fun1()">
+<input type="button" value="주소줄 내용변경" onclick="fun2()">
+<input type="button" value="주소줄 내용변경2" onclick="fun3()">
+<input type="button" value="js1폴더 test13.html이동" onclick="fun4()">
+<input type="button" value="새로고침" onclick="fun5()">
+
+
+</body>
+</html>

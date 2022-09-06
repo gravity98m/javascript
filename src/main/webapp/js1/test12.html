@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js1/test12.html</title>
+<script type="text/javascript">
+	// 함수정의
+	function sum(a, b) {
+		alert("두 수를 받아서 합을 구해서 리턴")
+		return a + b; // return 리턴할 값
+	}
+	// 함수호출
+	var s = sum(10, 20);
+	alert("두 수의 합 : "+s); // s에 값을 저장한 후 출력
+	alert("두 수의 평균 : "+s/2);
+	
+	
+	// 함수 정의 - 함수이름 mul(받은 값을 저장하는 변수, 받은 값을 저장하는 변수)
+	// 			기능 값을 받아서 두 수 곱하기해서 함수 호출한 곳으로 전달(리턴)
+	function mul(a,b) {
+		return a*b;
+	}
+	// 함수호출
+	var m = mul(10,20);
+	alert("두 수의 곱 : "+m);
+	alert("두 수의 곱/2 : "+m/2)
+
+	
+	// 함수 정의 - 함수이름 numCheck(받은값을 저장하는 변수)
+	// 			기능 받은 값을 가지고 양수, 0, 음수 => 출력(리턴값 없음)
+	function numCheck(a) {
+		if(a>0){
+			alert(a+" : 양수");
+		}else if(a==0){
+			alert(a+" : 영");
+		}else{
+			alert(a+" : 음수");
+		}
+		return;
+	}
+	// 함수호출
+	numCheck(-1);
+	
+	// 함수 정의 - 함수이름 calcSum(받은값을 저장하는 변수)
+	// 			기능 1~n을 반복해서 1~n의 합을 구해서 리턴
+	
+	
+	function calcSum(n) { //3을 대입하면 
+		
+		var sum=0; // 합을 저장하는 변수를 선언
+		for(i=1;i<=n;i++){ // 조건문에만 사용되고 끝
+			sum+=i;
+		}		
+		return sum;
+
+		 
+	}	
+	// 함수호출
+	var n = 6;
+	alert("1~" +n+ "까지의 합 : " + calcSum(n)); //어떻게 대입시킨 값을 넣지???
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>
