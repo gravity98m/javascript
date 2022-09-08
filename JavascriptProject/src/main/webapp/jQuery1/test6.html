@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jQuery1/test6.html</title>
+<script type="text/javascript" src="jquery-3.6.1.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+// 		대상.each() 반복문 함수() -> each()따로 기능없이, 반복만 수행.
+		var arr = ['pink', 'yellow', 'skyblue'];
+		
+		$('h1').each(function(index,item){
+// 			alert(index);
+			alert(arr[index]);
+			
+// 			$('h1').css('color',arr[index]); // h1태그 전체를 대상으로 설정되어서 맨 마지막 skyblue가 h1 전체적으로 스타일 적용.
+			// this 첫번째 h1, 두번째 h1, 세번째 h1을 대상으로 색깔 설정
+			$(this).css('color',arr[index]);
+			
+		});
+		
+		// 배열변수 대상
+		var arr2 = [
+			{'id' : 'kim', 'name' : 'kimgildong'},
+			{'id' : 'lee', 'name' : 'leegildong'},
+			{'id' : 'hong', 'name' : 'honggildong'},
+		];
+		
+// 		$.each(배열변수,funtion(index,item){ });
+	
+		$.each(arr2,function(index,item){
+// 			alert(index);
+// 			alert(item.id);
+// 			alert(item.name);
+			$('div').append(item.id+', '+item.name+'<br>');
+			$('table').append('<tr><td>'+item.id+'</td><td>'+item.name+'</td></tr>');
+			
+		});
+	});
+</script>
+</head>
+<body>
+<table border="1">
+<tr><td>아이디</td><td>이름</td></tr>
+</table>
+<div></div>
+<h1>head-0</h1>
+<h1>head-1</h1>
+<h1>head-2</h1>
+</body>
+</html>
