@@ -12,18 +12,21 @@
 // 				alert($('#id').val());
 // 				alert($('#pass').val());
 				if($('#id').val()==""){
-					alert("아이디 입력");
+// 					alert("아이디 입력");
+					$('#msg').html("아이디 입력").css('color','red');
 					$('#id').focus();
 					return false; // 기존의 submit을 멈추기 위해 리턴값으로 false를 줌
 				} 
 				if($('#pass').val()==""){
-					alert("비밀번호 입력");
+// 					alert("비밀번호 입력");
+					$('#msg').html("비밀번호 입력").css('color','red');
 					$('#pass').focus();
 					return false;
 				}
 // 				alert($('#gen1').is(':checked'));
 				if($('#gen1').is(':checked')==false && $('#gen2').is(':checked')==false){
-					alert("성별 체크");
+// 					alert("성별 체크");
+					$('#msg').html("성별 체크").css('color','red');
 					return false;
 				}
 			});
@@ -36,6 +39,7 @@
 비밀번호 <input type="password" name="pass" id="pass"><br>
 성별 <input type="radio" name="gender" id="gen1">남
 	 <input type="radio" name="gender" id="gen2">여 <br>
+	 <div id="msg"></div><br>
 <input type="submit" value="전송">
 
 </form>
