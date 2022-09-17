@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test4.html</title>
+<script type="text/javascript">
+// window	- location(주소입력창)
+//			- history (방문기록)
+//			- document (html전체틀)	- image, div (텍스트상자, 하이퍼링크)
+//									- form 	- text, passward, textarea
+//											- checkbox, radio
+//											- select
+
+//document : 웹브라우저에서 html, body 태그 내의 정보를 저장하는 내장객체
+//document.변수 	- 기능 담당		
+//		=> document.title 변수 : 문제 제목을 저장
+//		=> document.bgColor 변수 : 문서의 배경색을 저장
+//document.함수()	- 특징 담당
+//		=> document.open() 함수 : 문서 내용을 열기
+//		=> document.writeln() 함수 : 문서 내용을 쓰기
+
+function fun1() { 
+	alert(document.title);
+}
+
+function fun2() {
+	document.title="문서제목";
+}
+
+function fun3() {
+	document.bgColor="yellow";
+}
+	
+function fun4(a) {
+// 	alert(a);
+	document.bgColor=a;
+}
+document.writeln("문서 내 글쓰기");
+	
+</script>
+</head>
+<body>
+<input type="button" value="문서제목확인" onclick="fun1()">
+<input type="button" value="문서제목변경" onclick="fun2()">
+<input type="button" value="문서배경색변경" onclick="fun3()">
+<input type="radio" name="ra" value="skyblue" onclick="fun4('skyblue')"> skyblue
+<input type="radio" name="ra" value="pink" onclick="fun4('pink')"> pink
+<input type="radio" name="ra" value="lightgreen" onclick="fun4('lightgreen')"> lightgreen
+</body>
+</html>

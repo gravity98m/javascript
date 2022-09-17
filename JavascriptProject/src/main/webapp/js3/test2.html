@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js3/test2.html</title>
+<script type="text/javascript">
+// window	- location(주소입력창)
+//			- history (방문기록)
+//			- document (html전체틀)	- image, div (텍스트상자, 하이퍼링크)
+//									- form 	- text, passward, textarea
+//											- checkbox, radio
+//											- select	
+//
+//document.form이름.텍스트상자이름 : form태그 글을 적을 수 있는 텍스트상자 내장객체
+//document.form이름.텍스트상자이름.변수 	- 기능 담당		
+//		=> document.form이름.텍스트상자이름.type 변수 : 텍스트상자 타입 저장
+//		=> document.form이름.텍스트상자이름.value 변수 : 텍스트상자에 입력된 값 저장 
+
+// document.form이름.텍스트상자이름.함수() - 특징 담당
+//	 	=> document.form이름.텍스트상자이름.focus() 텍스트상자 포커스(활성화)
+//		=> documetn.form이름.텍스트상자이름.blur() 텍스트상자 포커스 해제(활성화)
+//		=> documetn.form이름.텍스트상자이름.select() 텍스트상자 입력값 선택(활성화)
+function fun1(){
+	alert(document.fr.id.type);
+	alert(document.fr.id.value);
+	document.fr.id.focus();
+	document.fr.id.blur();
+	document.fr.id.select();
+}
+function fun2(){
+	// value변수값 변경, 포커스
+	document.fr.id.value="kim"; //새로입력하게 만들기 위해서는 "kim"대신 ""을 넣으면 된다.
+	document.fr.id.focus();
+}
+function fun3(){
+// 	alert(document.fr.id.value);
+// 	// 문자열.변수 => 문자열.length => 문자열의 길이 저장 변수
+// 	alert(document.fr.id.value.length);
+	if(document.fr.id.value==""){ // JS에서는 null대신 ""를 더 많이 씀
+		alert("아이디 상자 비어있음");
+		document.fr.id.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 아이디 상자에 입력된 값은 5자 입력,
+	// => 5자가 아니면 아이디상자는 5자 입력, 포커스, 되돌아 감
+	if(document.fr.id.value.length!=5){
+		alert("아이디 상자는 5자 입력");		
+		document.fr.id.focus();
+		return;
+	}
+	if(document.fr.pass.value==""){
+		// 비밀번호 비어있음, 포커스
+		alert("비밀번호 상자 비어있음")
+		document.fr.pass.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 	비밀번호 상자에 입력된 값은 7자 이상 입력
+	// 	=> 7자보다 작으면, 비밀번호 상자는 7자 이상 입력, 포커스, 되돌아감. 
+	if(document.fr.pass.value.length<7){
+		 alert("비밀번호 상자는 7자 이상 입력");
+		 document.fr.pass.focus();
+		// 함수 호출한 곳으로 되돌아감
+		 return;
+	}
+	if(document.fr.intro.value==""){
+		// 자기소개 비어있음, 포커스
+		alert("자기소개 비어있음");
+		document.fr.intro.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+	// 자기소개 상자에 입력된 값은 4자 ~ 9자 사이 입력
+	// => 4자보다 작으면 동시에 9자보다 크면, 자기소개 상자는 4자 ~ 9자 사이 입력
+	//										, 포커스, 되돌아감
+	if(!(document.fr.intro.value.length>3 && document.fr.intro.value.length<10)){
+		alert("자기소개 상자는 4자 ~ 9자 사이 입력")
+		document.fr.intro.focus();
+		// 함수 호출한 곳으로 되돌아감
+		return;
+	}
+		// 폼에 데이터를 가지고 action="a.jsp" 전송
+		document.fr.submit(); // 서버에 전달
+	
+}
+</script>
+</head>
+<body>
+<form action="a.jsp" method="get" name="fr">
+아이디 : <input type="text" name="id" > <br>
+비밀번호 : <input type="password" name="pass" ><br>
+자기소개 : <textarea name="intro" rows="10" cols="20"></textarea><br>
+<input type="button" value="정보확인" onclick="fun1()">
+<input type="button" value="정보변경" onclick="fun2()">
+<input type="button" value="제어" onclick="fun3()">
+
+</form>
+</body>
+</html>

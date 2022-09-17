@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js2/test3.html</title>
+<script type="text/javascript">
+//	window 	- location(주소입력창)
+// 			- history (방문기록)
+// 			- document (html전체틀) - image, div (텍스트상자, 하이퍼링크)
+// 						 			- form 	- text, passward, textarea
+// 						 					- checkbox, radio
+// 						 					- select
+
+// history : 웹브라우저에서 방문한 기록을 저장하는 내장객체
+// history.변수 
+//		=> history.length 변수 : 방문기록 개수 저장
+// history.함수()
+//		=> history.back() 함수 : 방문한 이전페이지로 이동
+//		=> history.forward() 함수 : 방문한 다음페이지로 이동
+//		=> history.go(-1) 함수 : 방문한 -n 이전페이지로 이동 -> 로그인할 때 주로 사용
+//		=> history.go(2) 함수 : 방문한 n 다음페이지로 이동
+
+function fun1(){ //같은 페이지를 방문했더라도 COUNT됨
+	// 방문기록개수
+	alert(history.length);
+}
+
+function fun2() {
+	// 이전페이지 이동
+	history.back();
+// 	history.go(-1);
+}
+
+function fun3() {
+	// 다음페이지 이동
+	history.forward();
+// 	history.go(1);
+}
+
+function fun4() {
+	
+	
+}
+
+function fun5() {
+	
+	
+}
+</script>
+</head>
+<body>
+<input type="button" value="방문기록개수" onclick="fun1()">
+<input type="button" value="이전페이지이동" onclick="fun2()">
+<input type="button" value="다음페이지이동" onclick="fun3()">
+<input type="button" value="페이지이동" onclick="fun4()">
+<input type="button" value="페이지이동" onclick="fun5()">
+
+</body>
+</html>

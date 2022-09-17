@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js3/test4.html</title>
+<script type="text/javascript">
+// window	- location(주소입력창)
+//			- history (방문기록)
+//			- document (html전체틀)	- image, div (텍스트상자, 하이퍼링크)
+//									- form 	- text, passward, textarea
+//											- checkbox, radio
+//											- select	
+//	
+//document.form이름.목록상자이름 : form태그 목록상자 내장객체
+//document.form이름.목록상자이름.변수 	- 기능 담당		
+//=> document.form이름.목록상자이름.type 변수 : 목록상자 타입 저장
+//=> document.form이름.목록상자이름.value 변수 : 목록상자 선택된 값 저장 
+//=> document.form이름.목록상자이름.selectedIndex 변수 : 목록상자이름 선택되어진 값의 순서
+
+//document.form이름.목록상자이름.함수() - 특징 담당
+//=> document.form이름.목록상자이름.focus() 목록상자 체크 함
+function fun1(){
+	alert(document.fr.se.type);
+	alert(document.fr.se.value);
+	alert(document.fr.se.selectedIndex);
+	document.fr.se.focus();
+}
+function fun2(){
+	// 선택된 순서값 변경
+	document.fr.se.selectedIndex=2;
+}
+function fun3(){
+	// 선택된 목록의 value값이 ""이면 목록 선택하세요, 포커스, 되돌아감
+// 	if(document.fr.se.value==""){ 
+// 		alert("목록 선택하세요");
+// 		document.fr.se.focus();
+// 		return;
+// 	}
+
+	if(document.fr.se.selectedIndex==0){
+		alert("목록 선택하세요");
+		document.fr.se.focus();
+		return;
+	}
+	// 폼태그 내용을 서버에 전송
+	document.fr.submit();
+	
+}
+</script>
+</head>
+<body>
+<form action="a.jsp" method="get" name="fr">
+<!-- size="3" multiple selected / multiple 속성은 여러개를 선택할 수 있는 것.  -->
+목록상자 : 	<select name="se"> 
+				<option value="">목록 선택하세요</option>
+				<option value="1">목록1</option>
+				<option value="2">목록2</option>
+				<option value="3">목록3</option>
+			</select>
+<input type="button" value="정보확인" onclick="fun1()">
+<input type="button" value="정보변경" onclick="fun2()">
+<input type="button" value="제어" onclick="fun3()">
+</form>
+</body>
+</html>
